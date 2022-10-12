@@ -71,7 +71,9 @@ function App() {
 
       <div
         style={{ width: '100%', maxWidth: '700px', textAlign: 'right', fontSize: '.7rem', margin: '1rem' }}>
-        Fully handmade, powered by React.js functional components, hooks and Redux
+        Fully handmade, powered by React.js functional components and hooks, with a pinch of Redux (including redux-persist)
+        <br />
+        <a href="https://github.com/mmoresun/todolist/tree/main">Source code on GitHub</a>
       </div>
 
     </div>

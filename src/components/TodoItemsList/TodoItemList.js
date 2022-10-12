@@ -10,7 +10,7 @@ import TodoItem from '../TodoItem/TodoItem'
 
 const TodoItemList = ({ searchValue, favChecked, doneChecked }) => {
 
-    // getting todos array with useSelector
+    // getting todos array with useSelector:
 
     const myTodoItems = useSelector((state) => state.todos);
 
@@ -23,13 +23,15 @@ const TodoItemList = ({ searchValue, favChecked, doneChecked }) => {
 
     })
 
-    const doneFilteredTodos = searchFilteredTodos.filter((item) =>
-    !doneChecked ? !item.done : item
-  );
 
-  const favFilteredTodos = doneFilteredTodos.filter((item) =>
-    favChecked ? item.favorite : item
-  );
+
+    const doneFilteredTodos = searchFilteredTodos.filter((item) =>
+        !doneChecked ? !item.done : item
+    );
+
+    const favFilteredTodos = doneFilteredTodos.filter((item) =>
+        favChecked ? item.favorite : item
+    );
 
     // making cute 'TodoItem' component from each 'searchFilteredTodos' element
 
@@ -65,7 +67,7 @@ const TodoItemList = ({ searchValue, favChecked, doneChecked }) => {
                     fontSize: 'medium',
                     fontWeight: '700'
                 }}
-            >                  
+            >
                 Done: {myTodoItems.filter((item) => item.done).length}/{myTodoItems.length},
 
                 {myTodoItems.filter((item) => item.favorite).length === 1
