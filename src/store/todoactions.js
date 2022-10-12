@@ -1,0 +1,6 @@
+export const ADD_TODO = 'ADD_TODO'
+export const DELETE_TODO = 'DELETE_TODO'
+export const TOGGLE_TODO_EDIT = 'TOGGLE_TODO_EDIT'
+export const EDIT_TODO ='EDIT_TODO'
+export const TOGGLE_TODO_DONE = 'TOGGLE_TODO_DONE'
+export const TOGGLE_TODO_FAVORITE = 'SET_TODO_FAVORITE'
