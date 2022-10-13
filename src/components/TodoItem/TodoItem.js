@@ -13,7 +13,6 @@ const TodoItem = ({ data, ...item }) => {
     const toggleItemFav = (item) => {
 
         dispatch(
-
             {
                 type: TOGGLE_TODO_FAVORITE,
                 payload: item
@@ -24,7 +23,6 @@ const TodoItem = ({ data, ...item }) => {
     const toggleItemDone = (item) => {
 
         dispatch(
-
             {
                 type: TOGGLE_TODO_DONE,
                 payload: item
@@ -35,7 +33,6 @@ const TodoItem = ({ data, ...item }) => {
     const toggleItemEdit = (item) => {
 
         dispatch(
-
             {
                 type: TOGGLE_TODO_EDIT,
                 payload: item
@@ -48,7 +45,6 @@ const TodoItem = ({ data, ...item }) => {
     const editTodoItem = (item) => {
 
         dispatch(
-
             {
                 type: EDIT_TODO,
                 payload: { ...item, todoName: editTodo.trim() }
@@ -61,7 +57,6 @@ const TodoItem = ({ data, ...item }) => {
     const deleteTodoItem = (item) => {
 
         dispatch(
-
             {
                 type: DELETE_TODO,
                 payload: item
@@ -108,30 +103,31 @@ const TodoItem = ({ data, ...item }) => {
 
                         <i className="fa fa-star fa-lg" aria-hidden="true" style={item.favorite ? { color: 'orange', transition: '150ms ease' } : { color: '#ccc', transition: '150ms ease' }}
                             onClick={() => toggleItemFav(item)}
-
                         />
-
                         <i className="fas fa-edit fa-lg" style={{ color: 'blue' }}
                             onClick={() => toggleItemEdit(item)} />
 
-
                         <i className="fa-solid fa-trash fa-lg" aria-hidden="true" style={{ color: 'red' }}
-                            onClick={() => deleteTodoItem(item)} /></div>
-
+                            onClick={() => deleteTodoItem(item)} />
+                    </div>
                 </div>
 
                 <div>
-
                     <br />
-                    
-                    <form type='submit' style={{ margin: '0 0 0px 0', display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
+                    <form
+                        type='submit'
+                        style={{ margin: '0 0 0px 0', display: 'flex', flexDirection: 'row', justifyContent: 'center' }}
+                        onSubmit={(e) => {
+                            e.preventDefault()
+                            editTodoItem(item)
+                        }}
+                    >
 
                         {item.edit && (
 
                             <div className='todoItem__editBlock' style={{ transition: '900ms ease' }}>
 
                                 <div>
-
                                     <input
 
                                         id='standartInput'
@@ -139,28 +135,20 @@ const TodoItem = ({ data, ...item }) => {
                                         defaultValue={item.todoName}
                                         onChange={e => setEditTodo(e.target.value)}
                                         style={{ padding: '0 5px 0 5px', margin: '0 0 10px 0' }}
-
                                     />
-
                                 </div>
 
                                 <div>
                                     <i className="fa fa-check fa-lg" aria-hidden="true" style={{ color: 'green' }}
                                         type='submit'
-                                        onClick={() => editTodoItem(item)} />
+                                        onClick={() => editTodoItem(item)}
+                                    />
                                 </div>
-
-
                             </div>
-                        )
-                        }
-
+                        )}
                     </form>
-
                 </div>
-
             </div>
-
         </div>
     );
 }

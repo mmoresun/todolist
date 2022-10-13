@@ -72,6 +72,7 @@ const TodoAddForm = () => {
                 >Add new todo</button>
 
             </form>
+            
             {newEntry.trim().length > 50 && (<h1 style={{ color: 'red', fontSize: 'small', margin: '0 0 5px 0' }}>Too many symbols: {newEntry.length} instead of 50 maximum</h1>)}
 
         </div>
