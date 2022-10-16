@@ -66,13 +66,13 @@ const TodoAddForm = () => {
                 />
 
                 <button
-
                     onClick={addNewEntry} // starting addNewEntry when clicking
-
-                >Add new todo</button>
+                >
+                    Add new todo
+                </button>
 
             </form>
-            
+
             {newEntry.trim().length > 50 && (<h1 style={{ color: 'red', fontSize: 'small', margin: '0 0 5px 0' }}>Too many symbols: {newEntry.length} instead of 50 maximum</h1>)}
 
         </div>

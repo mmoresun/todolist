@@ -79,18 +79,19 @@ const TodoItem = ({ data, ...item }) => {
 
                     <div>
 
-                        <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+                        <div
+                            style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}
+                            onClick={() => toggleItemDone(item)}
+                        >
 
                             <i className={!item.done
 
                                 ? "fa-regular fa-square fa-lg"
                                 : 'fa-regular fa-square-check fa-lg'}
-
-                                onClick={() => toggleItemDone(item)} />
+                            />
 
                             <h1
-                                className={item.done ? 'done' : 'undone'}
-                                onClick={() => toggleItemDone(item)}>
+                                className={item.done ? 'done' : 'undone'}>
                                 {item.todoName}
 
                             </h1>

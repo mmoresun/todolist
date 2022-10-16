@@ -51,6 +51,7 @@ const SearchPanel = ({ onChange, handleDoneChange, handleFavChange, favChecked, 
             type="text"
             placeholder="Start search here"
             onChange={handleSearchChange}
+            onKeyPress={(e) => { e.key === 'Enter' && e.preventDefault(); }}
           />
 
         </form>
